@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using MVC_WebApplication.Data;
 using MVC_WebApplication.Models.ViewModels;
 
-namespace MVC_WebApplication.Properties
+namespace MVC_WebApplication.Controllers
 {
     public class DepartmentsController : Controller
     {
