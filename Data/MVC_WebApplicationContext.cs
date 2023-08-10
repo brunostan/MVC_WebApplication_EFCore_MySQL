@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MVC_WebApplication.Models;
 
 namespace MVC_WebApplication.Data
 {
@@ -9,6 +10,9 @@ namespace MVC_WebApplication.Data
         {
         }
 
-        public DbSet<MVC_WebApplication.Models.ViewModels.Department> Department { get; set; } = default!;
+        public DbSet<Department> Department { get; set; } = default!;
+        public DbSet<Seller> Seller { get; set; } = default!;
+        public DbSet<SalesRecord> SalesRecords { get; set; } = default!;
+
     }
 }
