@@ -1,4 +1,5 @@
-﻿using MVC_WebApplication.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using MVC_WebApplication.Data;
 using MVC_WebApplication.Models;
 
 namespace MVC_WebApplication.Services
@@ -23,9 +24,11 @@ namespace MVC_WebApplication.Services
             _context.SaveChanges();
         }
 
-        public Seller FindById(int id)
+        public Seller? FindById(int id)
         {
-            return _context.Seller.FirstOrDefault(seller => seller.Id == id);
+            return _context.Seller
+                .Include(Seller => Seller.Department)
+                .FirstOrDefault(seller => seller.Id == id);
         }
 
         public void Remove(int id)
