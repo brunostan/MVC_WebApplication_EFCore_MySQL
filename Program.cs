@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MVC_WebApplication.Data;
+using MVC_WebApplication.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<MVC_WebApplicationContext>
@@ -10,7 +11,9 @@ builder.Services.AddDbContext<MVC_WebApplicationContext>
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
 builder.Services.AddScoped<SeedingService>();
+builder.Services.AddScoped<SellerService>();
 
 var app = builder.Build();
 

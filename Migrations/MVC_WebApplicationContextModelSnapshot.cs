@@ -65,6 +65,9 @@ namespace MVC_WebApplication.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<double>("BaseSalary")
+                        .HasColumnType("double");
+
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime(6)");
 
@@ -78,9 +81,6 @@ namespace MVC_WebApplication.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("longtext");
-
-                    b.Property<double>("Salary")
-                        .HasColumnType("double");
 
                     b.HasKey("Id");
 

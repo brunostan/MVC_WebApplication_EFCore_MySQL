@@ -82,7 +82,7 @@ namespace MVC_WebApplication.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<double>("Salary")
+                    b.Property<double>("BaseSalary")
                         .HasColumnType("double");
 
                     b.HasKey("Id");
