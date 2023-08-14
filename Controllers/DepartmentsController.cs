@@ -113,6 +113,11 @@ namespace MVC_WebApplication.Controllers
             return View(department);
         }
 
+        private bool DepartmentExists(int? id)
+        {
+            throw new NotImplementedException();
+        }
+
         // GET: Departments/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {

@@ -4,6 +4,6 @@ namespace MVC_WebApplication.Models.ViewModels
     {
         public string? RequestId { get; set; }
         public string? Message { get; set; }
-        public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+        public bool? ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
 }
