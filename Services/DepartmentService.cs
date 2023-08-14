@@ -1,4 +1,5 @@
-﻿using MVC_WebApplication.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using MVC_WebApplication.Data;
 using MVC_WebApplication.Models;
 
 namespace MVC_WebApplication.Services
@@ -12,9 +13,9 @@ namespace MVC_WebApplication.Services
             _context = context;
         }
 
-        public List<Department> FindAll()
+        public async Task<List<Department>> FindAllAsync()
         {
-            return _context.Department.OrderBy(x => x.Name).ToList();
+            return await _context.Department.OrderBy(x => x.Name).ToListAsync();
         }
     }
 }
