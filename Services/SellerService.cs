@@ -21,15 +21,13 @@ namespace MVC_WebApplication.Services
 
         public async Task InsertAsync(Seller obj)
         {
-            _context.Seller.Add(obj);
+            _context.Add(obj);
             await _context.SaveChangesAsync();
         }
 
-        public async Task<Seller> FindByIdAsync(int id)
+        public async Task<Seller?> FindByIdAsync(int id)
         {
-            return await _context.Seller
-                .Include(obj => obj.Department)
-                .FirstOrDefaultAsync(obj => obj.Id == id);
+            return await _context.Seller.Include(obj => obj.Department).FirstOrDefaultAsync(obj => obj.Id == id);
         }
 
         public async Task RemoveAsync(int id)
@@ -40,9 +38,9 @@ namespace MVC_WebApplication.Services
                 _context.Seller.Remove(obj!);
                 await _context.SaveChangesAsync();
             }
-            catch (DbUpdateException e)
+            catch (DbUpdateException)
             {
-                throw new IntegrityException(e.Message);
+                throw new IntegrityException("Can't delete seller because he/she has sales");
             }
         }
 

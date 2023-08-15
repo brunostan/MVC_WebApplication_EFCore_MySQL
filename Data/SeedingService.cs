@@ -16,7 +16,7 @@ namespace MVC_WebApplication.Data
 
         public void Seed()
         {
-            if (_context.Department.Any() || _context.Seller.Any() || _context.SalesRecords.Any())
+            if (_context.Department.Any() || _context.Seller.Any() || _context.SalesRecord.Any())
             {
                 return;
             }
@@ -41,10 +41,10 @@ namespace MVC_WebApplication.Data
             SalesRecord r6 = new(6, new DateTime(2018, 09, 15), 2000, SaleStatus.BILLED, s1);
             SalesRecord r7 = new(7, new DateTime(2018, 09, 28), 13000, SaleStatus.BILLED, s2);
             SalesRecord r8 = new(8, new DateTime(2018, 09, 11), 4000, SaleStatus.BILLED, s4);
-            SalesRecord r9 = new(9, new DateTime(2018, 09, 14), 11000, SaleStatus.PENDIN, s6);
+            SalesRecord r9 = new(9, new DateTime(2018, 09, 14), 11000, SaleStatus.PENDING, s6);
             SalesRecord r10 = new(10, new DateTime(2018, 09, 7), 9000, SaleStatus.BILLED, s6);
             SalesRecord r11 = new(11, new DateTime(2018, 09, 13), 6000, SaleStatus.BILLED, s2);
-            SalesRecord r12 = new(12, new DateTime(2018, 09, 25), 7000, SaleStatus.PENDIN, s3);
+            SalesRecord r12 = new(12, new DateTime(2018, 09, 25), 7000, SaleStatus.PENDING, s3);
             SalesRecord r13 = new(13, new DateTime(2018, 09, 29), 10000, SaleStatus.BILLED, s4);
             SalesRecord r14 = new(14, new DateTime(2018, 09, 4), 3000, SaleStatus.BILLED, s5);
             SalesRecord r15 = new(15, new DateTime(2018, 09, 12), 4000, SaleStatus.BILLED, s1);
@@ -59,7 +59,7 @@ namespace MVC_WebApplication.Data
             SalesRecord r24 = new(24, new DateTime(2018, 10, 12), 8000, SaleStatus.BILLED, s5);
             SalesRecord r25 = new(25, new DateTime(2018, 10, 31), 7000, SaleStatus.BILLED, s3);
             SalesRecord r26 = new(26, new DateTime(2018, 10, 6), 5000, SaleStatus.BILLED, s4);
-            SalesRecord r27 = new(27, new DateTime(2018, 10, 13), 9000, SaleStatus.PENDIN, s1);
+            SalesRecord r27 = new(27, new DateTime(2018, 10, 13), 9000, SaleStatus.PENDING, s1);
             SalesRecord r28 = new(28, new DateTime(2018, 10, 7), 4000, SaleStatus.BILLED, s3);
             SalesRecord r29 = new(29, new DateTime(2018, 10, 23), 12000, SaleStatus.BILLED, s5);
             SalesRecord r30 = new(30, new DateTime(2018, 10, 12), 5000, SaleStatus.BILLED, s2);
@@ -68,7 +68,7 @@ namespace MVC_WebApplication.Data
 
             _context.Seller.AddRange(s1, s2, s3, s4, s5, s6);
 
-            _context.SalesRecords.AddRange(
+            _context.SalesRecord.AddRange(
                 r1, r2, r3, r4, r5, r6, r7, r8, r9, r10,
                 r11, r12, r13, r14, r15, r16, r17, r18, r19, r20,
                 r21, r22, r23, r24, r25, r26, r27, r28, r29, r30

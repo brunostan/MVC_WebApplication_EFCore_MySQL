@@ -1,9 +1,13 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using MVC_WebApplication.Models;
 using MVC_WebApplication.Models.ViewModels;
 using MVC_WebApplication.Services;
 using MVC_WebApplication.Services.Exceptions;
-using System.Diagnostics;
 
 namespace MVC_WebApplication.Controllers
 {
@@ -106,9 +110,9 @@ namespace MVC_WebApplication.Controllers
             }
 
             List<Department> departments = await _departmentService.FindAllAsync();
-            SellerFormViewModel viewModel = new() { Seller = obj, Departments = departments };
+            SellerFormViewModel viewModel = new SellerFormViewModel { Seller = obj, Departments = departments };
             return View(viewModel);
-        }
+        } 
 
         [HttpPost]
         [ValidateAntiForgeryToken]

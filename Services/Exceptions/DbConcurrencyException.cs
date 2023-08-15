@@ -1,10 +1,11 @@
-﻿namespace MVC_WebApplication.Services.Exceptions
+﻿using System;
+
+namespace MVC_WebApplication.Services.Exceptions
 {
     public class DbConcurrencyException : ApplicationException
     {
         public DbConcurrencyException(string message) : base(message)
         {
-
         }
     }
 }
